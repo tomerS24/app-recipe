@@ -26,7 +26,7 @@ export default function RecipeList({ user, recipes }) {
           <p>{recipe.cookingTime} minutes to make.</p>
           <p>{recipe.likes?.length || 0} likes</p>
           <div>{recipe.method.substring(0, 100)}...</div>
-          <Link to={`/recipes/${recipe.id}`}>Cook This</Link>
+          { user && <Link to={`/recipes/${recipe.id}`}>Cook This</Link> }
           { user?.uid && (user?.uid === recipe.userId) && <img 
             className="delete"
             onClick={() => handleClick(recipe.id)}

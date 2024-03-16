@@ -22,7 +22,7 @@ export default function Home({user}) {
       case 'all':
         return true
       case 'mine':
-        return document.userId === user.uid
+        return user && document.userId === user.uid
       default:
         console.log(document.category, filter)
         return document.category.label === filter
